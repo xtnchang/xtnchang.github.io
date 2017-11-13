@@ -1,0 +1,188 @@
+<html>
+	<head>
+		<style type="text/css" href="../css/style.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<title>Drinking Bird</title>
+			body { margin: 0;}
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<h3>Click and drag to rotate model.</h3>
+		<script src="../js/three.min.js"></script>
+		<script src="../js/OrbitControls.js"></script>
+		<script>
+		var camera, scene, renderer,
+	    geometry, material, mesh;
+
+	    init();
+	    animate();
+
+	    function init() {
+	        scene = new THREE.Scene();
+	        scene.fog = new THREE.Fog( 0x808080, 3000, 6000 );
+			// LIGHTS
+			var ambientLight = new THREE.AmbientLight( 0x222222 );
+			var light = new THREE.DirectionalLight( 0xffffff, 1.0 );
+			light.position.set( 200, 400, 500 );
+			
+			var light2 = new THREE.DirectionalLight( 0xffffff, 1.0 );
+			light2.position.set( -400, 200, -300 );
+
+			scene.add(ambientLight);
+			scene.add(light);
+			scene.add(light2);
+			
+			// CAMERA
+	        camera = new THREE.PerspectiveCamera( 80, window.innerWidth / window.innerHeight, 1, 10000 );
+	        camera.position.z = 700;
+
+	        scene.add(camera);
+
+	        // OBJECTS
+
+	        // base 
+	        var geometry = new THREE.CubeGeometry( 20+64+110, 4, 2*77 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -45
+	        mesh.position.y = 4/2 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        // left foot
+	        var geometry = new THREE.CubeGeometry( 20+64+110, 52, 6  );
+	        material = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -45
+	        mesh.position.y = 52/2 - 380
+	        mesh.position.z = 77 + 6/2
+	        scene.add( mesh );
+
+	        // left leg
+	        var geometry = new THREE.CubeGeometry( 64, 334+52, 6 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = (334+52)/2 - 380
+	        mesh.position.z = 77 + 6/2
+	        scene.add( mesh );
+
+	        // right foot
+	        var geometry = new THREE.CubeGeometry( 20+64+110, 52, 6 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -45
+	        mesh.position.y = 52/2 - 380
+	        mesh.position.z = -(77 + 6/2)
+	        scene.add( mesh );
+
+	        // right leg
+	        var geometry = new THREE.CubeGeometry( 64, 334+52, 6 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xF07020 } );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = (334+52)/2 - 380
+	        mesh.position.z = -(77 + 6/2)
+	        scene.add( mesh );
+
+	        // body
+	        var geometry = new THREE.SphereGeometry( 64, 334+52, 6 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xA00000} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = 155 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        //spine
+	        var geometry = new THREE.CylinderGeometry( 10, 10, 320, 32 );
+	        material = new THREE.MeshLambertMaterial( { color: 0x0000D0} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = 155+60+160 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        // head
+	        var geometry = new THREE.SphereGeometry( 64, 334+52, 6 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xA00000} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = 375+160+60 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        // hat base
+	        var geometry = new THREE.CylinderGeometry( 75, 75, 10, 32 );
+	        material = new THREE.MeshLambertMaterial( { color: 0x0000D0} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = 595+60-10+5 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        // hat top
+	        var geometry = new THREE.CylinderGeometry( 40, 40, 100, 32 );
+	        material = new THREE.MeshLambertMaterial( { color: 0x0000D0} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = 0
+	        mesh.position.y = 650+5+50 - 380
+	        mesh.position.z = 0
+	        scene.add( mesh );
+
+	        // nose
+	        var geometry = new THREE.CylinderGeometry( 6, 14, 70, 32 );
+	        material = new THREE.MeshLambertMaterial( { color: 0xA00000} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -70
+	        mesh.position.y = 580 - 380
+	        mesh.position.z = 0
+	        mesh.rotation.z = 90 * Math.PI / 180.0;
+	        scene.add( mesh );
+
+			// left eye
+			var geometry = new THREE.SphereGeometry( 10, 32, 16 );
+	        material = new THREE.MeshPhongMaterial( { color: 0x000000} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -45
+	        mesh.position.y = 610 - 380
+	        mesh.position.z = 30
+	        scene.add( mesh );
+
+			// right eye
+			var geometry = new THREE.SphereGeometry( 10, 32, 16 );
+	        material = new THREE.MeshPhongMaterial( { color: 0x000000} );
+	        mesh = new THREE.Mesh( geometry, material );
+	        mesh.position.x = -45
+	        mesh.position.y = 610 - 380
+	        mesh.position.z = -30
+	        scene.add( mesh );
+
+	        // rendering
+	        renderer = new THREE.WebGLRenderer({ antialiasing: true });
+	        renderer.setSize( window.innerWidth, window.innerHeight );
+	        renderer.setClearColor( 0xd7ffff, 1 ); // This allows you to set background-color
+
+	        document.body.appendChild( renderer.domElement );
+
+	        controls = new THREE.OrbitControls(camera, renderer.domElement);
+	    }
+
+
+	    function animate() {
+	        requestAnimationFrame( animate );
+	        render();
+	    }
+
+	    function render() {
+	        // mesh.rotation.x += 0.01;
+	        // mesh.rotation.y += 0.02;
+
+	        renderer.render( scene, camera );
+	    }
+
+		 
+		</script>
+	</body>
+</html>

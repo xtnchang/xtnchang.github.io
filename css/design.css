@@ -1,0 +1,62 @@
+h2.heading {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 3.2em;
+    color: black;
+    text-decoration: none;
+    padding-top: 50px;
+    text-align: center;
+    display: block;
+}
+
+img.design {
+    width: 100%;
+    height: auto;
+}
+
+p.button-blue {
+    text-align: center;
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 2.4em;
+    color: #3b3b3b;
+}
+
+a.button-blue {
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    height: 50px;
+    width: 90px;
+    border-color: #637BA8;
+    /* Background color property is in the a.Smoothscroll property */
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 100px;
+    margin: auto;
+    text-align: center;
+}
+
+a.smoothScroll:link {
+    color: #545454 !important;
+    background-color: #E8EFFA;
+    text-decoration: none !important;
+} 
+
+a.smoothScroll:hover {
+    color: black !important;
+    background-color: #CEDAED !important;
+    text-decoration: none !important;
+    -webkit-transition: background .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out;
+    transition: background .2s ease-in-out;
+} 
+
+a.smoothScroll:visited {
+    color: #5C5C5C !important;
+    background-color: #E8EFFA;
+    text-decoration: none !important;
+}
+
+.design {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 24px;
+    text-align: left;
+}

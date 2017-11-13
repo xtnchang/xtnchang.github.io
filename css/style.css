@@ -1,0 +1,209 @@
+nav#myNav {
+   position: fixed;
+   top: 0;
+   background: #Fafafa;
+   /*  
+   box-shadow: none !important; 
+   -webkit-box-shadow: none !important;
+   */ 
+   border-color: transparent;
+   width: 100%;
+}
+
+img#lightbulb {
+    display: block;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    max-width: 28%;
+    height: auto;
+    width: auto\9; 
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 2.4em;
+    color: #3b3b3b;
+}
+
+a.button {
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    height: 50px;
+    width: 90px;
+    border-color: #ff938b;
+    /* Background color property is in the a.Smoothscroll property */
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 100px;
+    margin: auto;
+    text-align: center;
+}
+
+h2.heading {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 3.2em;
+    color: black;
+    text-decoration: none;
+    padding-top: 50px;
+    text-align: center;
+    display: block;
+}
+
+section#home {
+    height: 100vh;
+} 
+
+section#about {
+    /*height: 100vh;*/
+    background-image: url("../assets/watercolor_peach.jpg");
+}
+
+img#profile {
+    float: left; 
+    padding-top: 60px;
+    height: 300px;
+    /*
+    padding-left: 140px; 
+    display: block;    
+    max-width: 24%;
+    height: auto;
+    width: auto\9;
+    margin: auto;
+    */
+} 
+
+p.bio {
+    float: left;
+    /**width: 700px;**/ 
+    padding-top: 50px;
+    padding-left: 30px;
+    font-family: "freight-text-pro", "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 1.8em;
+    text-align: left;
+    color: #4F3723;
+}
+
+a.resume {
+    text-decoration: none !important;
+}
+
+section#word {
+    /*height: 110vh;*/
+    background-image: url("../assets/watercolor_natural.jpg");
+}
+
+h3.writing {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 2em;
+    color: #363636 !important;
+    /*font-weight: bold;*/
+    text-decoration: none;
+    padding-top: 20px;
+    text-align: left;
+    display: block;
+}
+
+p.excerpt{
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 1.8em;
+    color: #5c5c5c !important;
+    text-align: left;
+}
+
+a.titlelink {
+    color: #363636;
+    text-decoration: none !important; 
+}
+
+a.excerptlink {
+    color: #5c5c5c;
+    text-decoration: none !important; 
+}
+
+section#design {
+    /*height: 150vh;*/
+    /** background-image: url("../assets/watercolor_cornflower_edit.jpg"); **/
+    background-color: #f7f7f7;
+}
+
+img.projects {
+    height: 220px;
+    max-height: 20%; 
+    margin-top: 50px;
+    margin-left: 50px;
+    box-shadow: 10px 10px 70px #d4d4d4;
+    -webkit-box-shadow: 10px 10px 70px #d4d4d4;
+    -moz-box-shadow: 10px 10px 70px #d4d4d4; 
+}
+
+p.caption {
+    font-family: "EB Garamond", "Baskerville", serif;
+    font-size: 40px;
+    font-size: 1.6em;
+    text-align: left;
+    color: black;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-left: 55px;
+}
+span.subcaption {
+    font-size: 0.8em;
+    text-align: left;
+    color: #5c5c5c;
+    font-weight: normal;
+}
+
+a.portfolio-link {
+    text-decoration: none !important;
+}
+
+a.smoothScroll:link {
+    color: #545454 !important;
+    background-color: #FFEDEB;
+    text-decoration: none !important;
+} 
+
+a.smoothScroll:hover {
+    color: black !important;
+    background-color: #FFD3CC !important;
+    text-decoration: none !important;
+    -webkit-transition: background .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out;
+    transition: background .2s ease-in-out;
+} 
+
+a.smoothScroll:visited {
+    color: #5C5C5C !important;
+    background-color: #FFEDEB;
+    text-decoration: none !important;
+}
+
+body { /* This is for scrollspy to work*/
+    position: relative;
+}
+
+a#navHome {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 32px;
+    background-color: transparent;
+}
+
+a#navAbout {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 24px;
+    background-color: transparent;
+}
+
+a#navSentences {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 24px;
+    background-color: transparent;
+}
+
+a#navCode {
+    font-family: "Garamond", "EB Garamond", "Baskerville", serif;
+    font-size: 24px;
+    background-color: transparent;
+}
