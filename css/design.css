@@ -13,8 +13,8 @@ img.design {
     height: auto;
 }
 
-img.mobile {
-    width: 50%;
+img.design-narrow {
+    width: 45%;
     height: auto;
     display: block;
     margin: 0 auto;
