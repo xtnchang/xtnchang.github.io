@@ -13,6 +13,13 @@ img.design {
     height: auto;
 }
 
+img.mobile {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 p.button-blue {
     text-align: center;
     font-family: "Garamond", "EB Garamond", "Baskerville", serif;
