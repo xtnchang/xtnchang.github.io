@@ -33,12 +33,20 @@ a.button-blue {
     height: 50px;
     width: 90px;
     border-color: #637BA8;
-    /* Background color property is in the a.Smoothscroll property */
+    /*Background color property is in the a.Smoothscroll property */
     border-style: solid;
     border-width: 3.5px;
     border-radius: 100px;
     margin: auto;
     text-align: center;
+}
+
+a.button-blue {
+    border-color: #637BA8;
+}
+
+a.button-purple {
+    border-color: #5136bc;
 }
 
 a.smoothScroll:link {
